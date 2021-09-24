@@ -12,7 +12,8 @@ app = FastAPI()
 class Play(BaseModel):
     def __init__(__pydantic_self__, **data: Any) -> None:
         super().__init__(**data)
-        __pydantic_self__.lastUpdateTime = time.time()
+        if __pydantic_self__.lastUpdateTime is None:
+            __pydantic_self__.lastUpdateTime = time.time()
 
     lastUpdateTime: Optional[int]
     originalCurrent: Optional[int]
