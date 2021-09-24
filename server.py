@@ -15,7 +15,7 @@ class Play(BaseModel):
         if __pydantic_self__.lastUpdateTime is None:
             __pydantic_self__.lastUpdateTime = time.time()
 
-    lastUpdateTime: Optional[int]
+    lastUpdateTime: Optional[float]
     originalCurrent: Optional[int]
     playbackRate: Optional[float] = 1
     paused: Optional[bool]
